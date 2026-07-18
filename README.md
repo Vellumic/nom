@@ -1,21 +1,24 @@
+<div align="center">
+	<img
+		title="nom will happily take a byte out of your files :)"
+		src="https://raw.githubusercontent.com/Geal/nom/main/assets/nom.png"
+		alt="nom logo in CC0 license, by Ange Albertini">
+
 # nom, eating data byte by byte
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Join the chat at https://gitter.im/Geal/nom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Geal/nom?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://github.com/rust-bakery/nom/actions/workflows/ci.yml/badge.svg)](https://github.com/rust-bakery/nom/actions/workflows/ci.yml)
-[![Coverage Status](https://coveralls.io/repos/github/rust-bakery/nom/badge.svg?branch=main)](https://coveralls.io/github/rust-bakery/nom?branch=main)
 [![crates.io Version](https://img.shields.io/crates/v/nom.svg)](https://crates.io/crates/nom)
 [![Minimum rustc version](https://img.shields.io/badge/rustc-1.65.0+-lightgray.svg)](#rust-version-requirements-msrv)
+[![Build Status](https://github.com/rust-bakery/nom/actions/workflows/ci.yml/badge.svg)](https://github.com/rust-bakery/nom/actions/workflows/ci.yml)
+[![Coverage Status](https://coveralls.io/repos/github/rust-bakery/nom/badge.svg?branch=main)](https://coveralls.io/github/rust-bakery/nom?branch=main)
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Join the chat at https://gitter.im/Geal/nom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Geal/nom?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+</div>
 
 nom is a parser combinators library written in Rust. Its goal is to provide tools
 to build safe parsers without compromising the speed or memory consumption. To
 that end, it uses extensively Rust's *strong typing* and *memory safety* to produce
 fast and correct parsers, and provides functions, macros and traits to abstract most of the
 error prone plumbing.
-
-![nom logo in CC0 license, by Ange Albertini](https://raw.githubusercontent.com/Geal/nom/main/assets/nom.png)
-
-*nom will happily take a byte out of your files :)*
 
 <!-- toc -->
 
