@@ -20,7 +20,8 @@ that end, it uses extensively Rust's *strong typing* and *memory safety* to prod
 fast and correct parsers, and provides functions, macros and traits to abstract most of the
 error prone plumbing.
 
-<!-- toc -->
+<details>
+	<summary><b>Table of Contents</b></summary>
 
 - [Example](#example)
 - [Documentation](#documentation)
@@ -36,8 +37,7 @@ error prone plumbing.
 - [Related projects](#related-projects)
 - [Parsers written with nom](#parsers-written-with-nom)
 - [Contributors](#contributors)
-
-<!-- tocstop -->
+</details>
 
 ## Example
 
