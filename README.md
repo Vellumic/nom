@@ -180,15 +180,15 @@ This has a few advantages:
 ## Technical features
 
 nom parsers are for:
-- [x] **byte-oriented**: The basic type is `&[u8]` and parsers will work as much as possible on byte array slices (but are not limited to them)
-- [x] **bit-oriented**: nom can address a byte slice as a bit stream
-- [x] **string-oriented**: The same kind of combinators can apply on UTF-8 strings as well
-- [x] **zero-copy**: If a parser returns a subset of its input data, it will return a slice of that input, without copying
-- [x] **streaming**: nom can work on partial data and detect when it needs more data to produce a correct result
-- [x] **descriptive errors**: The parsers can aggregate a list of error codes with pointers to the incriminated input slice. Those error lists can be pattern matched to provide useful messages.
-- [x] **custom error types**: You can provide a specific type to improve errors returned by parsers
-- [x] **safe parsing**: nom leverages Rust's safe memory handling and powerful types, and parsers are routinely fuzzed and tested with real world data. So far, the only flaws found by fuzzing were in code written outside of nom
-- [x] **speed**: Benchmarks have shown that nom parsers often outperform many parser combinators library like Parsec and attoparsec, some regular expression engines and even handwritten C parsers
+- **byte-oriented**: The basic type is `&[u8]` and parsers will work as much as possible on byte array slices (but are not limited to them)
+- **bit-oriented**: nom can address a byte slice as a bit stream
+- **string-oriented**: The same kind of combinators can apply on UTF-8 strings as well
+- **zero-copy**: If a parser returns a subset of its input data, it will return a slice of that input, without copying
+- **streaming**: nom can work on partial data and detect when it needs more data to produce a correct result
+- **descriptive errors**: The parsers can aggregate a list of error codes with pointers to the incriminated input slice. Those error lists can be pattern matched to provide useful messages.
+- **custom error types**: You can provide a specific type to improve errors returned by parsers
+- **safe parsing**: nom leverages Rust's safe memory handling and powerful types, and parsers are routinely fuzzed and tested with real world data. So far, the only flaws found by fuzzing were in code written outside of nom
+- **speed**: Benchmarks have shown that nom parsers often outperform many parser combinators library like Parsec and attoparsec, some regular expression engines and even handwritten C parsers
 
 Some benchmarks are available on [GitHub](https://github.com/rust-bakery/parser_benchmarks).
 
