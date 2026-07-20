@@ -45,9 +45,7 @@ error prone plumbing.
 
 ```rust
 use nom::{
-  bytes::complete::{tag, take_while_m_n},
-  combinator::map_res,
-  sequence::Tuple,
+  bytes::{tag, take_while_m_n},
   IResult,
   Parser,
 };
@@ -59,44 +57,23 @@ pub struct Color {
   pub blue: u8,
 }
 
-fn from_hex(input: &str) -> Result<u8, std::num::ParseIntError> {
-  u8::from_str_radix(input, 16)
-}
-
-fn is_hex_digit(c: char) -> bool {
-  c.is_digit(16)
-}
-
-fn hex_primary(input: &str) -> IResult<&str, u8> {
-  map_res(
-    take_while_m_n(2, 2, is_hex_digit),
-    from_hex
-  ).parse(input)
+fn hex_channel(input: &str) -> IResult<&str, u8> {
+  take_while_m_n(2, 2, |c: char| c.is_ascii_hexdigit())
+    .map_res(|s| u8::from_str_radix(s, 16))
+    .parse_complete(input)
 }
 
 fn hex_color(input: &str) -> IResult<&str, Color> {
-  let (input, _) = tag("#")(input)?;
-  let (input, (red, green, blue)) = (hex_primary, hex_primary, hex_primary).parse(input)?;
+  let (input, _) = tag("#").parse_complete(input)?;
+  let (input, (red, green, blue)) = (hex_channel, hex_channel, hex_channel).parse_complete(input)?;
   Ok((input, Color { red, green, blue }))
 }
 
 fn main() {
-  println!("{:?}", hex_color("#2F14DF"))
-}
-
-#[test]
-fn parse_color() {
-  assert_eq!(
-    hex_color("#2F14DF"),
-    Ok((
-      "",
-      Color {
-        red: 47,
-        green: 20,
-        blue: 223,
-      }
-    ))
-  );
+  match hex_color("#2F14DF") {
+    Ok((_, color)) => println!("Successfully parsed color: {color:?}"),
+    Err(_) => eprintln!("Failed to parse color")
+  }
 }
 ```
 
