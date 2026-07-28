@@ -34,6 +34,7 @@ error prone plumbing.
 - [Technical features](#technical-features)
 - [Rust version requirements](#rust-version-requirements-msrv)
 - [Installation](#installation)
+	- [Compilation features](#compilation-features)
 - [Related projects](#related-projects)
 - [Parsers written with nom](#parsers-written-with-nom)
 - [Contributors](#contributors)
@@ -207,19 +208,11 @@ nom is available on [crates.io](https://crates.io/crates/nom) and can be include
 nom = "8"
 ```
 
-There are a few compilation features:
+### Compilation features
+This crate supports standard `no_std` environments by configuring its default features:
 
-* `alloc`: (activated by default) if disabled, nom can work in `no_std` builds without memory allocators. If enabled, combinators that allocate (like `many0`) will be available
-* `std`: (activated by default, activates `alloc` too) if disabled, nom can work in `no_std` builds
-
-You can configure those features like this:
-
-```toml
-[dependencies.nom]
-version = "8"
-default-features = false
-features = ["alloc"]
-```
+- `alloc`: (Activated by default) Enables combinators requiring an allocator (like `many0`). Disable this for pure allocator-free environments.
+- `std`: (Activated by default, implies `alloc`) Enables standard library support. Disable this for `no_std` builds.
 
 # Related projects
 
