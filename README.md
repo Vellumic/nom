@@ -23,6 +23,8 @@ error prone plumbing.
 <details>
 	<summary><b>Table of Contents</b></summary>
 
+- [Installation](#installation)
+	- [Compilation features](#compilation-features)
 - [Example](#example)
 - [Documentation](#documentation)
 - [Why use nom?](#why-use-nom)
@@ -33,12 +35,25 @@ error prone plumbing.
 - [Parser combinators](#parser-combinators)
 - [Technical features](#technical-features)
 - [Rust version requirements](#rust-version-requirements-msrv)
-- [Installation](#installation)
-	- [Compilation features](#compilation-features)
 - [Related projects](#related-projects)
 - [Parsers written with nom](#parsers-written-with-nom)
 - [Contributors](#contributors)
 </details>
+
+## Installation
+
+nom is available on [crates.io](https://crates.io/crates/nom) and can be included in your Cargo enabled project like this:
+
+```toml
+[dependencies]
+nom = "8"
+```
+
+### Compilation features
+This crate supports standard `no_std` environments by configuring its default features:
+
+- `alloc`: (Activated by default) Enables combinators requiring an allocator (like `many0`). Disable this for pure allocator-free environments.
+- `std`: (Activated by default, implies `alloc`) Enables standard library support. Disable this for `no_std` builds.
 
 ## Example
 
@@ -198,21 +213,6 @@ Some benchmarks are available on [GitHub](https://github.com/rust-bakery/parser_
 The 8.0 series of nom supports **Rustc version 1.65 or greater**.
 
 The current policy is that this will only be updated in the next major nom release.
-
-## Installation
-
-nom is available on [crates.io](https://crates.io/crates/nom) and can be included in your Cargo enabled project like this:
-
-```toml
-[dependencies]
-nom = "8"
-```
-
-### Compilation features
-This crate supports standard `no_std` environments by configuring its default features:
-
-- `alloc`: (Activated by default) Enables combinators requiring an allocator (like `many0`). Disable this for pure allocator-free environments.
-- `std`: (Activated by default, implies `alloc`) Enables standard library support. Disable this for `no_std` builds.
 
 # Related projects
 
