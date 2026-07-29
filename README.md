@@ -223,7 +223,8 @@ The current policy is that this will only be updated in the next major nom relea
 
 Here is a (non exhaustive) list of known projects using nom:
 
-- Text file formats: [Ceph Crush](https://github.com/cholcombe973/crushtool),
+- Text file formats:
+[Ceph Crush](https://github.com/cholcombe973/crushtool),
 [Cronenberg](https://github.com/ayrat555/cronenberg),
 [Email](https://github.com/deuxfleurs-org/eml-codec),
 [XFS Runtime Stats](https://github.com/ChrisMacNaughton/xfs-rs),
@@ -237,12 +238,15 @@ Here is a (non exhaustive) list of known projects using nom:
 [PDB](https://github.com/TianyiShi2001/nom-pdb),
 [proto files](https://github.com/tafia/protobuf-parser),
 [Fountain screenplay markup](https://github.com/adamchalmers/fountain-rs),
-[vimwiki](https://github.com/chipsenkbeil/vimwiki-rs/tree/master/vimwiki), [vimwiki_macros](https://github.com/chipsenkbeil/vimwiki-rs/tree/master/vimwiki_macros),
-[Kconfig language](https://github.com/Mcdostone/nom-kconfig), [Askama templates](https://crates.io/crates/askama_parser/), [LP files](https://github.com/dandxy89/lp_parser_rs)
+[vimwiki](https://github.com/chipsenkbeil/vimwiki-rs/tree/master/vimwiki),
+[vimwiki_macros](https://github.com/chipsenkbeil/vimwiki-rs/tree/master/vimwiki_macros),
+[Kconfig language](https://github.com/Mcdostone/nom-kconfig),
+[Askama templates](https://crates.io/crates/askama_parser/),
+[LP files](https://github.com/dandxy89/lp_parser_rs)
 - Programming languages:
 [PHP](https://github.com/tagua-vm/parser),
 [Basic Calculator](https://github.com/balajisivaraman/basic_calculator_rs),
-[GLSL](https://sr.ht/~hadronized/glsl)
+[GLSL](https://sr.ht/~hadronized/glsl),
 [Lua](https://github.com/rozbb/nom-lua53),
 [Python](https://github.com/ProgVal/rust-python-parser),
 [SQL](https://github.com/ms705/nom-sql),
