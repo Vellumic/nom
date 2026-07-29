@@ -242,7 +242,8 @@ Here is a (non exhaustive) list of known projects using nom:
 [vimwiki_macros](https://github.com/chipsenkbeil/vimwiki-rs/tree/master/vimwiki_macros),
 [Kconfig language](https://github.com/Mcdostone/nom-kconfig),
 [Askama templates](https://crates.io/crates/askama_parser/),
-[LP files](https://github.com/dandxy89/lp_parser_rs)
+[LP files](https://github.com/dandxy89/lp_parser_rs),
+[TOML parser](https://github.com/joelself/tomllib)
 - Programming languages:
 [PHP](https://github.com/tagua-vm/parser),
 [Basic Calculator](https://github.com/balajisivaraman/basic_calculator_rs),
@@ -256,29 +257,31 @@ Here is a (non exhaustive) list of known projects using nom:
 [CSML](https://github.com/CSML-by-Clevy/csml-engine/tree/dev/csml_interpreter),
 [Wasm](https://github.com/fabrizio-m/wasm-nom),
 [Pseudocode](https://github.com/Gungy2/pseudocod),
-[Filter for MeiliSearch](https://github.com/meilisearch/meilisearch),
+[Filter for MeiliSearch](https://github.com/meilisearch/meilisearch/tree/main/crates/filter-parser),
 [PotterScript](https://github.com/fmiras/potterscript),
-[R](https://github.com/kpagacz/tergo)
-- Interface definition formats: [Thrift](https://github.com/thehydroimpulse/thrust)
+[R](https://github.com/kpagacz/tergo/tree/main/spongia),
+[xshade shading language](https://github.com/xshade-lang/xshade)
 - Audio, video and image formats:
 [GIF](https://github.com/Geal/gif.rs),
 [MagicaVoxel .vox](https://github.com/dust-engine/dot_vox),
 [MIDI](https://github.com/derekdreery/nom-midi-rs),
 [SWF](https://github.com/open-flash/swf-parser),
 [WAVE](https://github.com/Noise-Labs/wave),
+[FLV parser](https://github.com/rust-av/flavors),
 [Matroska (MKV)](https://github.com/rust-av/matroska),
 [Exif/Metadata parser for JPEG/HEIF/HEIC/MOV/MP4](https://github.com/mindeng/nom-exif)
 - Document formats:
 [TAR](https://github.com/Keruspe/tar-parser.rs),
 [GZ](https://github.com/nharward/nom-gzip),
-[GDSII](https://github.com/erihsu/gds2-io)
+[GDSII](https://github.com/erihsu/gds2-io),
+[PDF](https://github.com/J-F-Liu/lopdf)
 - Cryptographic formats:
 [X.509](https://github.com/rusticata/x509-parser)
 - Network protocol formats:
 [Bencode](https://github.com/jbaum98/bencode.rs),
 [D-Bus](https://github.com/toshokan/misato),
 [DHCP](https://github.com/rusticata/dhcp-parser),
-[HTTP](https://github.com/sozu-proxy/sozu/tree/main/lib/src/protocol/http),
+[HTTP](https://github.com/sozu-proxy/sozu/blob/main/lib/src/protocol/proxy_protocol/parser.rs),
 [URI](https://github.com/santifa/rrp/blob/master/src/uri.rs),
 [IMAP](https://github.com/djc/tokio-imap) ([alt](https://github.com/duesee/imap-codec)),
 [IRC](https://github.com/Detegr/RBot-parser),
@@ -304,7 +307,6 @@ Here is a (non exhaustive) list of known projects using nom:
 [ANT FIT](https://github.com/stadelmanma/fitparse-rs),
 [Version Numbers](https://github.com/fosskers/rs-versions),
 [Telcordia/Bellcore SR-4731 SOR OTDR files](https://github.com/JamesHarrison/otdrs),
-[MySQL binary log](https://github.com/PrivateRookie/boxercrab),
 [URI](https://github.com/Skasselbard/nom-uri),
 [Furigana](https://github.com/sachaarbonel/furigana.rs),
 [Wordle Result](https://github.com/Fyko/wordle-stats/tree/main/parser),
