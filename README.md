@@ -119,9 +119,9 @@ buffer overflow vulnerabilities, and handle common patterns for you:
 
 Example projects:
 
-- [FLV parser](https://github.com/rust-av/flavors)
-- [Matroska parser](https://github.com/rust-av/matroska)
-- [tar parser](https://github.com/Keruspe/tar-parser.rs)
+- [Game Boy ROM](https://github.com/MarkMcCaskey/gameboy-rom-parser)
+- [X.509 public key certificate standard](https://github.com/rusticata/x509-parser)
+- [GIF](https://github.com/Geal/gif.rs)
 
 ### Text format parsers
 
@@ -136,8 +136,9 @@ formats such as JSON, nom can manage it, and provides you with useful tools:
 
 Example projects:
 
-- [HTTP proxy](https://github.com/sozu-proxy/sozu/blob/main/lib/src/protocol/h2/parser.rs)
 - [TOML parser](https://github.com/joelself/tomllib)
+- [Fountain screenplay markup](https://github.com/adamchalmers/fountain-rs)
+- [Distinguished Encoding Rules for certificates](https://github.com/rusticata/der-parser)
 
 ### Programming language parsers
 
@@ -153,8 +154,9 @@ parsing, and construct an AST in place.
 
 Example projects:
 
-- [PHP VM](https://github.com/tagua-vm/parser)
-- [xshade shading language](https://github.com/xshade-lang/xshade)
+- [SystemVerilog](https://github.com/dalance/sv-parser)
+- [Askama templates](https://crates.io/crates/askama_parser/)
+- [Filter for MeiliSearch](https://github.com/meilisearch/meilisearch/tree/main/crates/filter-parser)
 
 ### Streaming formats
 
@@ -170,8 +172,9 @@ It allows you to build powerful, deterministic state machines for your protocols
 
 Example projects:
 
-- [HTTP proxy](https://github.com/sozu-proxy/sozu/blob/main/lib/src/protocol/h2/parser.rs)
-- [Using nom with generators](https://github.com/rust-bakery/generator_nom)
+- [HTTP proxy](https://github.com/sozu-proxy/sozu/blob/main/lib/src/protocol/proxy_protocol/parser.rs)
+- [Matroska parser](https://github.com/rust-av/matroska)
+- [Prometheus protocol](https://github.com/vectordotdev/vector/blob/master/lib/prometheus-parser/src/line.rs)
 
 ## Parser combinators
 
@@ -218,6 +221,7 @@ The current policy is that this will only be updated in the next major nom relea
 
 - [Get line and column info in nom's input type](https://github.com/fflorent/nom_locate)
 - [Using nom as lexer and parser](https://github.com/Rydgel/monkey-rust)
+- [Using nom with generators](https://github.com/rust-bakery/generator_nom)
 
 # Parsers written with nom
 
