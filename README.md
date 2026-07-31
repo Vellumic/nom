@@ -5,7 +5,6 @@
 		alt="nom logo in CC0 license, by Ange Albertini">
 
 # nom, eating data byte by byte
-
 [![crates.io Version](https://img.shields.io/crates/v/nom.svg)](https://crates.io/crates/nom)
 [![Minimum rustc version](https://img.shields.io/badge/rustc-1.65.0+-lightgray.svg)](#rust-version-requirements-msrv)
 [![Build Status](https://github.com/rust-bakery/nom/actions/workflows/ci.yml/badge.svg)](https://github.com/rust-bakery/nom/actions/workflows/ci.yml)
@@ -14,7 +13,7 @@
 [![Join the chat at https://gitter.im/Geal/nom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Geal/nom?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 </div>
 
-nom is a parser combinators library written in Rust. Its goal is to provide tools
+`nom` is a parser combinators library written in Rust. Its goal is to provide tools
 to build safe parsers without compromising the speed or memory consumption. To
 that end, it uses extensively Rust's *strong typing* and *memory safety* to produce
 fast and correct parsers, and provides functions, macros and traits to abstract most of the
@@ -27,7 +26,7 @@ error prone plumbing.
 	- [Compilation features](#compilation-features)
 - [Example](#example)
 - [Documentation](#documentation)
-- [Why use nom?](#why-use-nom)
+- [Why use `nom`?](#why-use-nom)
     - [Binary format parsers](#binary-format-parsers)
     - [Text format parsers](#text-format-parsers)
     - [Programming language parsers](#programming-language-parsers)
@@ -36,13 +35,12 @@ error prone plumbing.
 - [Technical features](#technical-features)
 - [Rust version requirements](#rust-version-requirements-msrv)
 - [Related projects](#related-projects)
-- [Parsers written with nom](#parsers-written-with-nom)
+- [Parsers written with `nom`](#parsers-written-with-nom)
 - [Contributors](#contributors)
 </details>
 
 ## Installation
-
-nom is available on [crates.io](https://crates.io/crates/nom) and can be included in your Cargo enabled project like this:
+`nom` is available on [crates.io](https://crates.io/crates/nom) and can be included in your Cargo enabled project like this:
 
 ```toml
 [dependencies]
@@ -56,7 +54,6 @@ This crate supports standard `no_std` environments by configuring its default fe
 - `std`: (Activated by default, implies `alloc`) Enables standard library support. Disable this for `no_std` builds.
 
 ## Example
-
 [Hexadecimal color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) parser:
 
 ```rust
@@ -94,22 +91,20 @@ fn main() {
 ```
 
 ## Documentation
-
 - [Reference documentation](https://docs.rs/nom)
 - [The Nominomicon: A Guide To Using Nom](https://tfpk.github.io/nominomicon/)
 - [Various design documents and tutorials](https://github.com/rust-bakery/nom/tree/main/doc)
 - [List of combinators and their behaviour](https://github.com/rust-bakery/nom/blob/main/doc/choosing_a_combinator.md)
 
-If you need any help developing your parsers, please ping `geal` on IRC (Libera, Geeknode, OFTC), go to `#nom-parsers` on Libera IRC, or on the [Gitter chat room](https://gitter.im/Geal/nom).
+> [!TIP]
+> If you need any help developing your parsers, please ping `geal` on IRC (Libera, Geeknode, OFTC), go to `#nom-parsers` on Libera IRC, or on the [Gitter chat room](https://gitter.im/Geal/nom).
 
-## Why use nom
-
+## Why use `nom`
 If you want to write:
 
 ### Binary format parsers
-
-nom was designed to properly parse binary formats from the beginning. Compared
-to the usual handwritten C parsers, nom parsers are just as fast, free from
+`nom` was designed to properly parse binary formats from the beginning. Compared
+to the usual handwritten C parsers, `nom` parsers are just as fast, free from
 buffer overflow vulnerabilities, and handle common patterns for you:
 
 - [TLV](https://en.wikipedia.org/wiki/Type-length-value)
@@ -124,14 +119,13 @@ Example projects:
 - [GIF](https://github.com/Geal/gif.rs)
 
 ### Text format parsers
-
-While nom was made for binary format at first, it soon grew to work just as
+While `nom` was made for binary format at first, it soon grew to work just as
 well with text formats. From line based formats like CSV, to more complex, nested
-formats such as JSON, nom can manage it, and provides you with useful tools:
+formats such as JSON, `nom` can manage it, and provides you with useful tools:
 
 - Fast case insensitive comparison
 - Recognizers for escaped strings
-- Regular expressions can be embedded in nom parsers to represent complex character patterns succinctly
+- Regular expressions can be embedded in `nom` parsers to represent complex character patterns succinctly
 - Special care has been given to managing non ASCII characters properly
 
 Example projects:
@@ -141,15 +135,14 @@ Example projects:
 - [Distinguished Encoding Rules for certificates](https://github.com/rusticata/der-parser)
 
 ### Programming language parsers
-
 While programming language parsers are usually written manually for more
-flexibility and performance, nom can be (and has been successfully) used
+flexibility and performance, `nom` can be (and has been successfully) used
 as a prototyping parser for a language.
 
-nom will get you started quickly with powerful custom error types, that you
+`nom` will get you started quickly with powerful custom error types, that you
 can leverage with [nom_locate](https://github.com/fflorent/nom_locate) to
 pinpoint the exact line and column of the error. No need for separate
-tokenizing, lexing and parsing phases: nom can automatically handle whitespace
+tokenizing, lexing and parsing phases: `nom` can automatically handle whitespace
 parsing, and construct an AST in place.
 
 Example projects:
@@ -159,12 +152,11 @@ Example projects:
 - [Filter for MeiliSearch](https://github.com/meilisearch/meilisearch/tree/main/crates/filter-parser)
 
 ### Streaming formats
-
 While a lot of formats (and the code handling them) assume that they can fit
 the complete data in memory, there are formats for which we only get a part
 of the data at once, like network formats, or huge files.
-nom has been designed for a correct behaviour with partial data: If there is
-not enough data to decide, nom will tell you it needs more instead of silently
+`nom` has been designed for a correct behaviour with partial data: If there is
+not enough data to decide, `nom` will tell you it needs more instead of silently
 returning a wrong result. Whether your data comes entirely or in chunks, the
 result should be the same.
 
@@ -177,7 +169,6 @@ Example projects:
 - [Prometheus protocol](https://github.com/vectordotdev/vector/blob/master/lib/prometheus-parser/src/line.rs)
 
 ## Parser combinators
-
 Parser combinators are an approach to parsers that is very different from
 software like [lex](https://en.wikipedia.org/wiki/Lex_(software)) and
 [yacc](https://en.wikipedia.org/wiki/Yacc). Instead of writing the grammar
@@ -191,41 +182,38 @@ written with other parser approaches.
 This has a few advantages:
 
 - The parsers are small and easy to write
-- The parsers components are easy to reuse (if they're general enough, please add them to nom!)
+- The parsers components are easy to reuse (if they're general enough, please add them to `nom`!)
 - The parsers components are easy to test separately (unit tests and property-based tests)
 - The parser combination code looks close to the grammar you would have written
 - You can build partial parsers, specific to the data you need at the moment, and ignore the rest
 
 ## Technical features
-
-nom parsers are for:
+`nom` parsers are for:
 - **byte-oriented**: The basic type is `&[u8]` and parsers will work as much as possible on byte array slices (but are not limited to them)
-- **bit-oriented**: nom can address a byte slice as a bit stream
+- **bit-oriented**: `nom` can address a byte slice as a bit stream
 - **string-oriented**: The same kind of combinators can apply on UTF-8 strings as well
 - **zero-copy**: If a parser returns a subset of its input data, it will return a slice of that input, without copying
-- **streaming**: nom can work on partial data and detect when it needs more data to produce a correct result
+- **streaming**: `nom` can work on partial data and detect when it needs more data to produce a correct result
 - **descriptive errors**: The parsers can aggregate a list of error codes with pointers to the incriminated input slice. Those error lists can be pattern matched to provide useful messages.
 - **custom error types**: You can provide a specific type to improve errors returned by parsers
-- **safe parsing**: nom leverages Rust's safe memory handling and powerful types, and parsers are routinely fuzzed and tested with real world data. So far, the only flaws found by fuzzing were in code written outside of nom
-- **speed**: Benchmarks have shown that nom parsers often outperform many parser combinators library like Parsec and attoparsec, some regular expression engines and even handwritten C parsers
+- **safe parsing**: `nom` leverages Rust's safe memory handling and powerful types, and parsers are routinely fuzzed and tested with real world data. So far, the only flaws found by fuzzing were in code written outside of `nom`
+- **speed**: Benchmarks have shown that `nom` parsers often outperform many parser combinators library like Parsec and attoparsec, some regular expression engines and even handwritten C parsers
 
-Some benchmarks are available on [GitHub](https://github.com/rust-bakery/parser_benchmarks).
+> [!NOTE]
+> Some benchmarks are available on [GitHub](https://github.com/rust-bakery/parser_benchmarks).
 
 ## Rust version requirements (MSRV)
+The 8.0 series of `nom` supports **Rustc version 1.65 or greater**.
 
-The 8.0 series of nom supports **Rustc version 1.65 or greater**.
-
-The current policy is that this will only be updated in the next major nom release.
+The current policy is that this will only be updated in the next major `nom` release.
 
 # Related projects
+- [Get line and column info in `nom`'s input type](https://github.com/fflorent/nom_locate)
+- [Using `nom` as lexer and parser](https://github.com/Rydgel/monkey-rust)
+- [Using `nom` with generators](https://github.com/rust-bakery/generator_nom)
 
-- [Get line and column info in nom's input type](https://github.com/fflorent/nom_locate)
-- [Using nom as lexer and parser](https://github.com/Rydgel/monkey-rust)
-- [Using nom with generators](https://github.com/rust-bakery/generator_nom)
-
-# Parsers written with nom
-
-Here is a (non exhaustive) list of known projects using nom:
+# Parsers written with `nom`
+Here is a (non exhaustive) list of known projects using `nom`:
 
 - Text file formats:
 [Ceph Crush](https://github.com/cholcombe973/crushtool),
@@ -316,14 +304,14 @@ Here is a (non exhaustive) list of known projects using nom:
 [Wordle Result](https://github.com/Fyko/wordle-stats/tree/main/parser),
 [NBT](https://github.com/phoenixr-codes/mcnbt)
 
-Want to create a new parser using `nom`? A list of not yet implemented formats is available [here](https://github.com/rust-bakery/nom/issues/14).
-
-Want to add your parser here? Create a pull request for it!
+> [!NOTE]
+> Want to create a new parser using `nom`? A list of not yet implemented formats is available [here](https://github.com/rust-bakery/nom/issues/14).
+> 
+> Want to add your parser here? Create a [pull request](https://github.com/rust-bakery/nom/compare) for it!
 
 # Contributors
-
-nom is the fruit of the work of many contributors over the years, many thanks for your help!
+`nom` is the fruit of the work of many contributors over the years, many thanks for your help!
 
 <a href="https://github.com/rust-bakery/nom/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=rust-bakery/nom" />
+  <img src="https://contributors-img.web.app/image?repo=rust-bakery/nom">
 </a>
